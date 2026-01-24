@@ -8,12 +8,21 @@ const ENGINE_POWER = 100
 @onready var reverse_camera_3d: Camera3D = $CameraPivot/ReverseCamera3D
 
 var look_direction
+var driving = false
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	look_direction = global_position
+	
+func enter() -> void:
+	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	driving = true
+
+func leave() -> void:
+	driving = false
 
 func _physics_process(delta: float) -> void:
+	if not driving:
+		return
 	steering = move_toward(steering, Input.get_axis("ui_right", "ui_left") * MAX_STEER, delta * 2.5)
 	engine_force = Input.get_axis("ui_down", "ui_up") * ENGINE_POWER
 	camera_pivot.global_position = camera_pivot.global_position.lerp(global_position, delta * 20.0)
