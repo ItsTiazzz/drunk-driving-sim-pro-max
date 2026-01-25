@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://coqa8cqbncuj7"]
+[gd_scene load_steps=8 format=3 uid="uid://coqa8cqbncuj7"]
 
 [ext_resource type="CylinderMesh" uid="uid://dejbfkmv2w4fx" path="res://shaders/water_shader.tres" id="1_rwgxs"]
 [ext_resource type="MeshLibrary" uid="uid://b7dne40es061y" path="res://models/city/tiles1.tres" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bbdwhogisi6he" path="res://scenes/car_player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bw8qniaoyi1re" path="res://scenes/player.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dpy6hiwyptvxy" path="res://tempvan.tscn" id="5_71j4m"]
 
 [sub_resource type="Sky" id="Sky_e5uuo"]
 
@@ -44,6 +45,8 @@ mesh = ExtResource("1_rwgxs")
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_4wyf3")
 cell_scale = 6.0
+collision_layer = 2
+collision_mask = 0
 data = {
 "cells": PackedInt32Array(327676, 65533, 17, 327679, 65533, 17, 262146, 65533, 17, 327673, 65533, 17, 327670, 65533, 17, 327667, 65533, 17, 327664, 65533, 17, 262149, 65533, 17, 262152, 65533, 17, 262155, 65533, 17, 262158, 65533, 17, 262161, 65533, 17, 262164, 65533, 17, 65559, 65533, 130, 65555, 65533, 130, 65551, 65533, 130, 65546, 65533, 130, 65548, 65533, 130, 65542, 65533, 130, 65538, 65533, 130, 131069, 65533, 130, 131070, 65533, 130, 131065, 65533, 130, 131061, 65533, 130, 131057, 65533, 130, 131053, 65533, 130)
 }
@@ -54,3 +57,6 @@ transform = Transform3D(-0.025007904, 0, 0.99968725, 0, 1, 0, -0.99968725, 0, -0
 
 [node name="Player" parent="." instance=ExtResource("4_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.757598, 10.250049, -4.5128756)
+
+[node name="Van" parent="." instance=ExtResource("5_71j4m")]
+transform = Transform3D(0.27, 0, 0, 0, 0.27, 0, 0, 0, 0.27, 13, 9, -5)

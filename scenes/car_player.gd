@@ -13,12 +13,21 @@ var driving = false
 func _ready() -> void:
 	look_direction = global_position
 	
+func should_interact() -> bool:
+	return !driving
+
+func interact() -> void:
+	if !driving: enter()
+
 func enter() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	driving = true
 
 func leave() -> void:
 	driving = false
+
+func get_prompt() -> String:
+	return "Druk E om in te stappen" if driving else "Druk E om uit te stappen"
 
 func _physics_process(delta: float) -> void:
 	if not driving:
