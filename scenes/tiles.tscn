@@ -404,7 +404,6 @@ visible = false
 visible = false
 
 [node name="road-crossing2" type="Node3D" parent="."]
-visible = false
 
 [node name="road-crossing" type="MeshInstance3D" parent="road-crossing2"]
 mesh = SubResource("ArrayMesh_n875d")
@@ -752,14 +751,18 @@ visible = false
 visible = false
 
 [node name="block-grass-large2" type="Node3D" parent="."]
+visible = false
 
 [node name="block-grass-large" type="MeshInstance3D" parent="block-grass-large2"]
+visible = false
 mesh = SubResource("ArrayMesh_15t2o")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="block-grass-large2/block-grass-large"]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="block-grass-large2/block-grass-large/StaticBody3D"]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_uw0s5")
 
 [node name="block-grass-long2" parent="." instance=ExtResource("132_rifhg")]
