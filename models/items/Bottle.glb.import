@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c53wdus7oktyf"
-path="res://.godot/imported/Van.glb-23f7546ac0a41a68f0b9767aead94e67.scn"
+uid="uid://2047nqa8ve8u"
+path="res://.godot/imported/Bottle.glb-0407a572d81fca34d31fdca4f72d24a3.scn"
 
 [deps]
 
-source_file="res://models/vehicles/Van.glb"
-dest_files=["res://.godot/imported/Van.glb-23f7546ac0a41a68f0b9767aead94e67.scn"]
+source_file="res://models/items/Bottle.glb"
+dest_files=["res://.godot/imported/Bottle.glb-0407a572d81fca34d31fdca4f72d24a3.scn"]
 
 [params]
 

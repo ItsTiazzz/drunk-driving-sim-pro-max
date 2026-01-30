@@ -89,9 +89,13 @@ func _headbob(time) -> Vector3:
 func _update_hover() -> void:
 	print(interaction_ray.is_colliding())	
 	print(interaction_ray.get_collider())
-	if !interaction_ray.is_colliding(): return
+	if !interaction_ray.is_colliding():
+		_reset_hover()
+		return
 	var hit = interaction_ray.get_collider()
-	if !hit: return
+	if !hit:
+		_reset_hover()
+		return
 	if hit.has_method("interact"):
 		if hit.has_method("should_interact"):
 			if hit.should_interact():
@@ -104,7 +108,11 @@ func _update_hover() -> void:
 		if hit.has_method("get_prompt"):
 			current_prompt = hit.get_prompt()
 		else:
-			current_prompt = null
+			_reset_hover()
+
+func _reset_hover() -> void:
+	current_prompt = null
+	current_interactable = null
 
 func _interact() -> void:
 	var hit = interaction_ray.get_collider()

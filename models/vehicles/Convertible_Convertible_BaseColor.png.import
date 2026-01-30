@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cej1pn4h705va"
-path.s3tc="res://.godot/imported/van_1387 Van.png-96289c0a9d2d7524170fafdc9046389b.s3tc.ctex"
+uid="uid://bhut08s50xnpm"
+path.s3tc="res://.godot/imported/Convertible_Convertible_BaseColor.png-61f6c58d58c4b5b6494e52313b3beff1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5ca4bb5fc08985785b1778b95e5ebde7"
+"md5": "bf202c283a430778a318c9bbb75ead19"
 }
 
 [deps]
 
-source_file="res://models/vehicles/van_1387 Van.png"
-dest_files=["res://.godot/imported/van_1387 Van.png-96289c0a9d2d7524170fafdc9046389b.s3tc.ctex"]
+source_file="res://models/vehicles/Convertible_Convertible_BaseColor.png"
+dest_files=["res://.godot/imported/Convertible_Convertible_BaseColor.png-61f6c58d58c4b5b6494e52313b3beff1.s3tc.ctex"]
 
 [params]
 

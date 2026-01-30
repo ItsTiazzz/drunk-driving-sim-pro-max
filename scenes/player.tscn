@@ -27,7 +27,7 @@ current = true
 
 [node name="InteractionRay" type="RayCast3D" parent="Head/Camera"]
 transform = Transform3D(1.9106853e-15, 4.371139e-08, 1, 0.99999994, -4.371139e-08, 0, 4.3711385e-08, 1, -4.371139e-08, 0, 0, 0)
-target_position = Vector3(0, -5, 0)
+target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(1, 0.30005082, 0.23680523, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
