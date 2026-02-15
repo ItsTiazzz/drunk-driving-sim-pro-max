@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://coqa8cqbncuj7"]
+[gd_scene load_steps=8 format=3 uid="uid://coqa8cqbncuj7"]
 
 [ext_resource type="CylinderMesh" uid="uid://dejbfkmv2w4fx" path="res://shaders/water_shader.tres" id="1_rwgxs"]
 [ext_resource type="MeshLibrary" uid="uid://b7dne40es061y" path="res://models/city/tiles1.tres" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bbdwhogisi6he" path="res://scenes/car_player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bw8qniaoyi1re" path="res://scenes/player.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://c6x3xeuvm5vid" path="res://models/city/room/room.glb" id="5_71j4m"]
 
 [sub_resource type="Sky" id="Sky_e5uuo"]
 
@@ -56,3 +57,6 @@ transform = Transform3D(-0.025007904, 0, 0.99968725, 0, 1, 0, -0.99968725, 0, -0
 
 [node name="Player" parent="." instance=ExtResource("4_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.757598, 10.250049, -4.5128756)
+
+[node name="room" parent="." instance=ExtResource("5_71j4m")]
+transform = Transform3D(0.0071209483, 0, -2.9999917, 0, 3, 0, 2.9999917, 0, 0.0071209483, -1.9091703, 10.816532, -12.587353)
