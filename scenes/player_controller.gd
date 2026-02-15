@@ -87,8 +87,8 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func _update_hover() -> void:
-	print(interaction_ray.is_colliding())	
-	print(interaction_ray.get_collider())
+	#print(interaction_ray.is_colliding())	
+	#print(interaction_ray.get_collider())
 	if !interaction_ray.is_colliding():
 		_reset_hover()
 		return
