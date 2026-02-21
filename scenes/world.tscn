@@ -1,7 +1,7 @@
 [gd_scene load_steps=30 format=4 uid="uid://coqa8cqbncuj7"]
 
 [ext_resource type="CylinderMesh" uid="uid://dejbfkmv2w4fx" path="res://shaders/water_shader.tres" id="1_rwgxs"]
-[ext_resource type="MeshLibrary" uid="uid://bmgjs16qpswvs" path="res://models/city/tiles160226a.tres" id="2_k0juu"]
+[ext_resource type="MeshLibrary" uid="uid://b5n4s8lagu5kr" path="res://models/city/tiles210226.tres" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://bbdwhogisi6he" path="res://scenes/car_player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bw8qniaoyi1re" path="res://scenes/player.tscn" id="4_k0juu"]
 
@@ -541,10 +541,10 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Car" parent="." instance=ExtResource("3_4wyf3")]
-transform = Transform3D(-0.025007904, 0, 0.99968725, 0, 1, 0, -0.99968725, 0, -0.025007904, -1.5648594, 10.106934, -3.8164444)
+transform = Transform3D(-0.025007904, 0, 0.99968725, 0, 1, 0, -0.99968725, 0, -0.025007904, -1.5648594, 10.153128, -4.2271986)
 
 [node name="Player" parent="." instance=ExtResource("4_k0juu")]
-transform = Transform3D(0.07795447, 0, -0.99695694, -0.023557654, 0.9997208, -0.0018420297, 0.9966786, 0.02362956, 0.07793271, -2.0686858, 10.808749, -13.288093)
+transform = Transform3D(0.9997426, 0.022687335, 0, -0.0226873, 0.9997411, -0.0017453283, -3.9596845e-05, 0.0017448791, 0.99999845, -2.0686858, 10.808749, -13.288093)
 
 [node name="room" type="StaticBody3D" parent="."]
 transform = Transform3D(0.0071209483, 0, -2.9999917, 0, 3, 0, 2.9999917, 0, 0.0071209483, -1.9091703, 10.816532, -12.587353)

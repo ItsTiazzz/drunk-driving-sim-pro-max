@@ -466,12 +466,10 @@ points = PackedVector3Array(1.203882, -0.43855417, -1.1305134, 1.201525, 0.13294
 [node name="Car" type="VehicleBody3D"]
 collision_mask = 3
 gravity_scale = 4.0
-center_of_mass_mode = 1
-center_of_mass = Vector3(0, -0.1, 0.7)
 script = ExtResource("1_koa6q")
 
 [node name="BackLeft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0186878, -0.36163744, -1.6455531)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.8, -0.28, -1.149)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
@@ -484,7 +482,7 @@ mesh = SubResource("ArrayMesh_arg65")
 skeleton = NodePath("")
 
 [node name="BackRight" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0138401, -0.36436352, -1.6513027)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.8, -0.28, -1.1488879)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
@@ -497,7 +495,7 @@ mesh = SubResource("ArrayMesh_t1rgp")
 skeleton = NodePath("")
 
 [node name="FrontRight" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99950963, -0.3751308, 1.9470717)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -0.8, -0.28, 1.365)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
@@ -510,7 +508,7 @@ mesh = SubResource("ArrayMesh_8yadd")
 skeleton = NodePath("")
 
 [node name="FrontLeft" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0202757, -0.37401024, 1.9439409)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0.8, -0.28, 1.3648198)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
@@ -523,10 +521,12 @@ mesh = SubResource("ArrayMesh_dufi2")
 skeleton = NodePath("")
 
 [node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 mesh = SubResource("ArrayMesh_48no8")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_0mmog")
 
 [node name="CameraPivot" type="Node3D" parent="."]
