@@ -533,7 +533,7 @@ shape = SubResource("ConvexPolygonShape3D_0mmog")
 top_level = true
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 1.8071773, -4.9731665)
+transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.1736482, -8.742278e-08, 0.1736482, -0.9848078, 0, 1.8071773, -3.6351304)
 
 [node name="ReverseCamera3D" type="Camera3D" parent="CameraPivot"]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.98480767, 0.17364816, 0, -0.17364816, 0.98480767, 0, 1.807, 4.973)
+transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.17364818, 0, -0.17364818, 0.9848078, 0, 1.807, 4.350077)

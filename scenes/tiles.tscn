@@ -1,4 +1,4 @@
-[gd_scene load_steps=396 format=4 uid="uid://8ityyy8b4yv7"]
+[gd_scene load_steps=399 format=4 uid="uid://8ityyy8b4yv7"]
 
 [ext_resource type="PackedScene" uid="uid://c05d7jml0oo16" path="res://models/city/streets/bridge-pillar-wide.glb" id="1_cw07f"]
 [ext_resource type="PackedScene" uid="uid://dwciaaya3fwrv" path="res://models/city/streets/bridge-pillar.glb" id="2_2mp2u"]
@@ -37,7 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://bqn3o0xf3uxpc" path="res://models/city/streets/road-intersection-barrier.glb" id="36_7msnp"]
 [ext_resource type="PackedScene" uid="uid://djtmxacui3rwy" path="res://models/city/streets/road-intersection-line.glb" id="37_18evb"]
 [ext_resource type="PackedScene" uid="uid://dwbq0yoqo4dhd" path="res://models/city/streets/road-intersection-path.glb" id="38_1te0x"]
-[ext_resource type="PackedScene" uid="uid://dvi3kye7doae8" path="res://models/city/streets/road-intersection.glb" id="39_a0ex1"]
 [ext_resource type="PackedScene" uid="uid://clmbw412be2w2" path="res://models/city/streets/road-roundabout-barrier.glb" id="40_51wyf"]
 [ext_resource type="PackedScene" uid="uid://yqqg6pcegh52" path="res://models/city/streets/road-side-barrier.glb" id="42_qwmv2"]
 [ext_resource type="PackedScene" uid="uid://ddw1xrtlngwp4" path="res://models/city/streets/road-side-entry-barrier.glb" id="43_80rwf"]
@@ -310,6 +309,47 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jlklk")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pqaob"]
+points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.02, -0.5, 0.5, 0, -0.5, -0.5, 0.02, 0.5, 0.5, 0, 0.5, 0.5, 0.02, -0.5, 0.5, 0.02, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lat2"]
+resource_name = "colormap"
+cull_mode = 2
+albedo_texture = ExtResource("18_pqaob")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vht0q"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.02, 1),
+"format": 34896613377,
+"index_count": 252,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAwAEAAIABQACAAQAAAACAAUABgAEAAMABQAEAAYAAwAHAAYAAAAHAAMABgAHAAgABwAAAAgACAAJAAYABQAGAAkACgAJAAgABQAJAAsACAAMAAoABQALAA0ABQANAA4ADAAIAA8AEAAMAA8AEQAQAA8ADwAOABEABQAOABIACAATAA8AAAATAAgABQAUAAAAFAATAAAAFQAFABIADwAWABQAFgAXABQAEwAYAA8AFwAZABQAGgAYABMAGAAbAA8AGwAYABoAHAAaABMAHAATABQAGgAdABsAHAAdABoAGwAeAA8AGwAdAB4AHgAfAA8AIAAeAB0AHQAcACAAIAAhAB4AIgAhACAAIAAjACIAGQAkABwAHAAlABkAJQAmABkAGQAmABQAJwAlABwAJwAcABQAKAAmACUAJgAoABQAJQApACgAKgApACUAKAApACoAJQAnACoAKgArACgAKwAqACcAKAArABQAFAArACcALAAPABQALAAUAC0ALQAUAAUABQAVAC0ALQAuACwALgAtABUALwAsAC4ALAAvADAAMAAvAC4AMAASACwAFQASADAALgAxADAAMAAxABUAFQAxAC4AMgAzADQANAA1ADIANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoA"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 62,
+"vertex_data": PackedByteArray("Zeb/f///AABl5v////8AAP///////wAAZeb//2XmAAD/////ZeYAAP//AAD//wAA////f2XmAABl5v9/ZeYAAMzM/3/MzAAA////f8zMAAD///9/joIAAP///3+OggAAzMz/f46CAAD///9/cH0AAP///38yMwAAAAD/fzIzAADMzP9/cH0AAP///39wfQAA////f5kZAADMzP9///8AAAAAAAD//wAA//8AAAAAAAAAAP9/cH0AAAAA/3+OggAAjoL/f8zMAAAAAP9/zMwAAI6C/3///wAAcH3/f8zMAAAyM/9///8AAHB9/3///wAAMjP/f3B9AAAAAP9/cH0AADIz/3/LzAAAMjP/f46CAAAAAP9/joIAAAAA/3/LzAAAMjP/f8zMAACZGf9/ZeYAAAAA/39l5gAAmRn/f///AAAAAP//ZeYAAJkZ//9l5gAAmRn/////AAAAAP////8AAAAA/3+ZGQAAAAAAAAAAAAAAAP//AAAAAAAA//+ZGQAA/////5kZAAD/////AAAAAAAA/39wfQAAMjP/f3B9AAAyM/9/joIAAAAA/3+OggAAzMz/f3B9AAD///9/cH0AAP///3+OggAAzMz/f46CAAAAAP9/mRkAAP///3+ZGQAA////fzMzAAAAAP9/MzMAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_el70m"]
+resource_name = "road-intersection_road-intersection"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.5, 1, 0.02, 1),
+"attribute_data": PackedByteArray("/zf/3/83Zcb/N2XG/zeY+f83mPn/N//f/zf/3/83/9//N//f/zf/3/83Zcb/N2XG/zdlxv83Zcb/N5j5/zf/3/83/9//N//f/zf/3/83/9//N//f/zeY+f83Zcb/N2XG/zdlxv83Zcb/N5j5/zf/3/83mPn/N//f/zf/3/83/9//N//f/zf/3/83Zcb/N2XG/yf/3/8n/9//J//f/yf/3/8n/9//J//f/yf/3/8n/9//J//f/yf/3/8n/9//J//f/yf/3/8n/9//J//f/yf/3/8n/9//J//f/yf/3/8n/9//92XG//eY+f/3mPn/92XG//dlxv/3Zcb/92XG//dlxv/3mPn/95j5//eY+f/3mPn/92XG//f/3//3/9//92XG//dlxv/3/9//9//f//dlxv/3Zcb/92XG//f/3//3/9//92XG//dlxv/3Zcb/92XG//dlxv/3Zcb/92XG//dlxv/3Zcb/9//f//f/3//3Zcb/9//f//f/3//3Zcb/92XG/0f/3/9H/9//R//f/0f/3/9H/9//R//f/0f/3/9H/9//R//f/0f/3/9H/9//R//f/wf/3/8H/9//B//f/wf/3/8H/9//B//f/wf/3/8H/9//B//f/wf/3/8H/9//B//f/wf/3/8H/9//B//f/wf/3w=="),
+"format": 34896613399,
+"index_count": 252,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAwAEAAAABAAFAAAABgAFAAQABgAHAAUABgAIAAcACQAGAAQABAAKAAkACgALAAkADAANAA4ADwAMAA4AEAAPAA4AEQAQAA4AEgARAA4AEwASAA4AFAATAA4AFAAOABUAFQAWABQAFwAUABYAGAAZABoAGgAbABgAGgAcABsAHAAdABsAHAAeAB0AHAAfAB4AHAAgAB8AHAAhACAAHAAiACEAHAAjACIAJAAlACYAJgAnACQAJwAmACgAKQAnACgAKgApACgAKAArACoAJgAsACgALAAtACgALgAtACwALQAvACgALwAwACgAMAAxACgALwAyADAAMwAwADIAMgA0ADMAMwA1ADAANgA1ADMAMwA3ADYAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAbwBwAGwAcABxAGwAcgBzAHQAdAB1AHIAdgB3AHgAeAB5AHYAeQB6AHYAewB5AHgA"),
+"material": SubResource("StandardMaterial3D_4lat2"),
+"name": "colormap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 124,
+"vertex_data": PackedByteArray("Zeb/f///AIBl5v////8AgP///////wCA//8AAP//AIAAAAAA//8AgMzM/3///wCAMjP/f///AICOgv9//////3B9/3//////mRn/f///AIAAAP////8AgJkZ/////wCAAAD//2Xm/78AAP//////vwAAAAD///+/AAD/f2Xm/78AAP9/zMz/vwAA/3+Ogv+/AAD/f3B9/78AAP9/MjP/vwAA/3+ZGf+/AAAAAAAA/78AAP//AAD/vwAA//+ZGf+//////5kZ/7//////AAD/v///AAAAAP+/////f5kZ/7///wAA////v////38yM/+/////f3B9/7////9/joL/v////3/MzP+/////f2Xm/7//////Zeb/v/////////+/////f46C//////9/zMz//8zM/3/MzP//zMz/f46C//8AAP9/MjP//8zM/39wff//////f3B9//////9/MjP//8zM/3//////joL/f8zM//+Ogv9//////3B9/3/MzP//MjP/f3B9//8AAP9/cH3//3B9/3//////MjP/f8vM//8yM/9//////zIz/3+Ogv//AAD/f46C//8AAP9/y8z//wAA//8AAP//AAAAAAAA/////wAAAAD///////8AAP//AAD//wAA////////AAD///////+ZGf//AAD//5kZ/////wAA////v///AAAAAP+/AAAAAAAA/78AAAAA////vwAA//9l5v//AAD/f2Xm//+ZGf9/Zeb//5kZ//9l5v///////5kZAID///9/mRkAgAAA/3+ZGQCAAAD//5kZAICZGf//////v5kZ//9l5v+/mRn/f2Xm/7+ZGf9/////vwAA//9l5v//mRn//2Xm//+ZGf///////wAA////////Zeb//2Xm////////Zeb/////////////Zeb///////9l5v//Zeb//2Xm/39l5v//////f2Xm////////Zeb//2Xm/3////+/Zeb/f2Xm/79l5v//Zeb/v2Xm//////+/AAD/f3B9//8yM/9/cH3//zIz/3+Ogv//AAD/f46C//9wff9/zMz//46C/3/MzP//joL/f/////9wff9//////8zM/39wff//////f3B9//////9/joL//8zM/3+Ogv//zMz/f8zM//////9/zMz//////39l5v//Zeb/f2Xm//9l5v9//////8zM/3//////AAD/f5kZ//////9/mRn//////38zM///AAD/fzMz//8AAP9/zMz//zIz/3/MzP//MjP/f/////+ZGf9/Zeb//wAA/39l5v//mRn/f///////f////3////9/////f////3////9/////f////3//f/9//3//f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9/////f////3////9/////f/+//3//v/9//7//f/+/AAD/fwAA/38AAP9/AAD/f/9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3////9/////f////3////9/////f////3////9/////f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vht0q")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jdncp"]
 points = PackedVector3Array(-0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0.02, -0.5, 0.5, 0, -0.5, -0.5, 0.02, 0.5, 0.5, 0, 0.5, 0.5, 0.02, -0.5, 0.5, 0.02, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cy28c"]
@@ -2101,8 +2141,16 @@ visible = false
 [node name="road-intersection-path2" parent="." instance=ExtResource("38_1te0x")]
 visible = false
 
-[node name="road-intersection2" parent="." instance=ExtResource("39_a0ex1")]
-visible = false
+[node name="road-intersection2" type="Node3D" parent="."]
+
+[node name="road-intersection" type="MeshInstance3D" parent="road-intersection2"]
+mesh = SubResource("ArrayMesh_el70m")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="road-intersection2/road-intersection"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="road-intersection2/road-intersection/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_jdncp")
 
 [node name="road-roundabout-barrier2" parent="." instance=ExtResource("40_51wyf")]
 visible = false
