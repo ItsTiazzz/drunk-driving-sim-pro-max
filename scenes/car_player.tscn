@@ -1,6 +1,9 @@
-[gd_scene load_steps=23 format=4 uid="uid://bbdwhogisi6he"]
+[gd_scene load_steps=26 format=4 uid="uid://bbdwhogisi6he"]
 
 [ext_resource type="Script" uid="uid://c1ra2brbnyubr" path="res://scenes/car_player.gd" id="1_koa6q"]
+[ext_resource type="AudioStream" uid="uid://boswunyds5psu" path="res://sounds/driving in my car.ogg" id="2_6x5y6"]
+[ext_resource type="AudioStream" uid="uid://uo5fpnd5o7xe" path="res://sounds/startengine.mp3" id="3_i3koa"]
+[ext_resource type="AudioStream" uid="uid://ctgbujcacfnyt" path="res://sounds/vine-boom.mp3" id="4_20dh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a67e8"]
 resource_name = "tire"
@@ -537,3 +540,13 @@ transform = Transform3D(-1, -1.5180808e-08, 8.609463e-08, 0, 0.9848078, 0.173648
 
 [node name="ReverseCamera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.9848078, 0.17364818, 0, -0.17364818, 0.9848078, 0, 1.807, 4.350077)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6x5y6")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i3koa")
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_20dh8")
+pitch_scale = 0.66

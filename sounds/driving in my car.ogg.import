@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://boswunyds5psu"
+path="res://.godot/imported/driving in my car.ogg-75a5016579e701a4293fceb10fb653dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://sounds/driving in my car.ogg"
+dest_files=["res://.godot/imported/driving in my car.ogg-75a5016579e701a4293fceb10fb653dc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
