@@ -39,8 +39,7 @@ func enter() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	player.add_collision_exception_with(this)
 	driving = true
-	label.text = """W,S: motor
-A,D: sturen
+	label.text = """W,A,S,D: beweging
 F: uitstappen
 B: radio"""
 	audio2.play()

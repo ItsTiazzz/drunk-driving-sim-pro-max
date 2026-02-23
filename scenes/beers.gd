@@ -45,9 +45,13 @@ func interact() -> void:
 	
 	if (player.bac == 1):
 		heart_beat_player.play()
-	if (player.bac == 2):
+	elif (player.bac == 2):
 		breathing_player.play()
-	if (player.bac == 5):
+	elif (player.bac == 3.5):
+		player.randomize_movement = true
+	elif (player.bac == 4):
+		heart_beat_player.volume_db = 24
+	elif (player.bac == 5):
 		await get_tree().create_timer(6).timeout
 		breathing_player.stop()
 		die_player.play()

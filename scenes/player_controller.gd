@@ -31,6 +31,13 @@ var bac = 0.0
 @onready var directional_light: DirectionalLight3D = $"../Environment/DirectionalLight3D"
 var night = false
 
+var randomize_movement = false
+var randomization_time = 0.0
+var ran1 = "left"
+var ran2 = "right"
+var ran3 = "forward"
+var ran4 = "backward"
+
 func _ready() -> void:
 	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -75,8 +82,7 @@ func _process(_delta: float) -> void:
 	else:
 		prompt.text = ""
 		
-func _move(delta: float) -> void:
-		# Handle jump.
+func _move(delta: float) -> void:	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		
@@ -86,9 +92,30 @@ func _move(delta: float) -> void:
 	else:
 		speed = WALK_SPEED - bac
 
+	if randomize_movement:
+		randomization_time += delta
+	else:
+		randomization_time = 0.0
+	if randomization_time >= 5:
+		randomization_time = 0.0
+		var rand = randi_range(0, 1)
+		var old1 = ran1
+		var old2 = ran2
+		var old3 = ran3
+		var old4 = ran4
+		if rand == 0:
+			ran1 = old2
+			ran2 = old3
+			ran3 = old4
+			ran4 = old1
+		else:
+			ran1 = old4
+			ran2 = old1
+			ran3 = old2
+			ran4 = old3
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "forward", "backward")
+	var input_dir := Input.get_vector(ran1, ran2, ran3, ran4)
 	var direction := (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
 		if direction:
