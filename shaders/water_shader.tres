@@ -1,4 +1,4 @@
-[gd_resource type="CylinderMesh" load_steps=3 format=3 uid="uid://dejbfkmv2w4fx"]
+[gd_resource type="CylinderMesh" format=3 uid="uid://dejbfkmv2w4fx"]
 
 [ext_resource type="Shader" uid="uid://b65ab45shmfwk" path="res://shaders/water_shader.gdshader" id="1_j6aso"]
 

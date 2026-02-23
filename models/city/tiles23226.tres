@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=1366 format=4 uid="uid://cmfr12k6v7tb8"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://cmfr12k6v7tb8"]
 
 [ext_resource type="Texture2D" uid="uid://bf58n573gg763" path="res://models/city/streets/Textures/colormap.png" id="1_7rx8y"]
 [ext_resource type="Texture2D" uid="uid://dlkx2rcxgb3un" path="res://models/city/kit/Textures/colormap.png" id="2_teesx"]

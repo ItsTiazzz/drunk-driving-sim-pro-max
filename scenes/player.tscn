@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bw8qniaoyi1re"]
+[gd_scene format=3 uid="uid://bw8qniaoyi1re"]
 
 [ext_resource type="Script" uid="uid://bo6g8638rivxk" path="res://scenes/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Shader" uid="uid://ddj2ibmi60bl4" path="res://shaders/vignette.gdshader" id="2_g2els"]
@@ -34,29 +34,29 @@ font_color = Color(1, 0.18431373, 0.22352941, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=1396704836]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 collision_mask = 3
 script = ExtResource("1_3vyb7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2059628499]
 mesh = SubResource("CapsuleMesh_g2els")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1565566563]
 shape = SubResource("ConvexPolygonShape3D_qhqgy")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=200632818]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.6508453, 0)
 
-[node name="Camera" type="Camera3D" parent="Head"]
+[node name="Camera" type="Camera3D" parent="Head" unique_id=329190633]
 current = true
 
-[node name="InteractionRay" type="RayCast3D" parent="Head/Camera"]
+[node name="InteractionRay" type="RayCast3D" parent="Head/Camera" unique_id=1836817877]
 transform = Transform3D(1.9106853e-15, 4.371139e-08, 1, 0.99999994, -4.371139e-08, 0, 4.3711385e-08, 1, -4.371139e-08, 0, 0, 0)
 target_position = Vector3(0, -2, 0)
 debug_shape_custom_color = Color(1, 0.30005082, 0.23680523, 1)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1983027081]
 anchors_preset = -1
 anchor_left = 0.117000006
 anchor_top = 0.158
@@ -72,7 +72,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.6638241, 0.6638241, 0.6638241, 1)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=2009133210]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -87,14 +87,14 @@ label_settings = SubResource("LabelSettings_3vyb7")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Vignette" type="ColorRect" parent="."]
+[node name="Vignette" type="ColorRect" parent="." unique_id=712466002]
 material = SubResource("ShaderMaterial_qhqgy")
 offset_right = 1165.0
 offset_bottom = 659.0
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
-[node name="BACLabel" type="Label" parent="."]
+[node name="BACLabel" type="Label" parent="." unique_id=237445355]
 offset_left = 14.0
 offset_top = 20.0
 offset_right = 374.0
@@ -102,7 +102,7 @@ offset_bottom = 95.0
 text = "BAC: 0 promille"
 label_settings = SubResource("LabelSettings_g2els")
 
-[node name="InstructionsLabel" type="Label" parent="."]
+[node name="InstructionsLabel" type="Label" parent="." unique_id=853947205]
 offset_left = 921.0
 offset_top = 18.0
 offset_right = 1139.0
@@ -114,7 +114,7 @@ N: nachtmodus
 "
 label_settings = SubResource("LabelSettings_tuyoq")
 
-[node name="Blackout" type="ColorRect" parent="."]
+[node name="Blackout" type="ColorRect" parent="." unique_id=546922704]
 visible = false
 offset_left = -19.0
 offset_top = -15.0
@@ -122,20 +122,20 @@ offset_right = 1176.0
 offset_bottom = 674.0
 color = Color(0, 0, 0, 1)
 
-[node name="GlokPlayer" type="AudioStreamPlayer" parent="."]
+[node name="GlokPlayer" type="AudioStreamPlayer" parent="." unique_id=2141834022]
 stream = ExtResource("3_qhqgy")
 volume_db = 14.037
 
-[node name="HeartBeatPlayer" type="AudioStreamPlayer" parent="."]
+[node name="HeartBeatPlayer" type="AudioStreamPlayer" parent="." unique_id=1995143185]
 stream = ExtResource("4_dqkch")
 volume_db = 2.107
 parameters/looping = true
 
-[node name="BreathingPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BreathingPlayer" type="AudioStreamPlayer" parent="." unique_id=1561662358]
 stream = ExtResource("5_qlg0r")
 volume_db = 2.107
 parameters/looping = true
 
-[node name="DiePlayer" type="AudioStreamPlayer" parent="."]
+[node name="DiePlayer" type="AudioStreamPlayer" parent="." unique_id=1941049868]
 stream = ExtResource("6_tuyoq")
 volume_db = 8.932
