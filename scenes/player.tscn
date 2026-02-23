@@ -89,8 +89,8 @@ vertical_alignment = 1
 
 [node name="Vignette" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_qhqgy")
-offset_right = 1151.0
-offset_bottom = 653.0
+offset_right = 1165.0
+offset_bottom = 659.0
 mouse_filter = 1
 color = Color(1, 1, 1, 0)
 
