@@ -1,7 +1,7 @@
 extends VehicleBody3D
 
-const MAX_STEER = 0.6
-const ENGINE_POWER = 60
+const MAX_STEER = 0.5
+const ENGINE_POWER = 80
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var camera_3d: Camera3D = $CameraPivot/Camera3D
@@ -17,6 +17,8 @@ const ENGINE_POWER = 60
 @onready var breathing_player: AudioStreamPlayer = $"../Player/BreathingPlayer"
 @onready var label: Label = $"../Player/InstructionsLabel"
 @onready var blackout: ColorRect = $"../Player/Blackout"
+@onready var speed_label: Label = $Label
+var speed_format = "Snelheid: %s km/h"
 
 var look_direction
 var driving = false
@@ -42,6 +44,7 @@ A,D: sturen
 F: uitstappen
 B: radio"""
 	audio2.play()
+	speed_label.visible = true
 
 func leave() -> void:
 	driving = false
@@ -51,8 +54,10 @@ func leave() -> void:
 	player_camera.current = true
 	label.text = """W,A,S,D: lopen
 Spatie: springen
-Shift: rennen"""
+Shift: rennen
+N: nachtmodus"""
 	audio.stop()
+	speed_label.visible = false
 
 func get_prompt() -> String:
 	if player.bac == 5:
@@ -86,6 +91,7 @@ func _physics_process(delta: float) -> void:
 		heart_beat_player.stop()
 		audio.stop()
 	last = linear_velocity.length()
+	speed_label.text = speed_format % snapped(linear_velocity.length() * 3.6, 1)
 	
 func _check_camera_switch():
 	if linear_velocity.dot(transform.basis.z) > -0.05:

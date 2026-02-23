@@ -25,6 +25,7 @@ var vignettemap = {
 @onready var head: Node3D = $"../../../Player/Head"
 @onready var blackout: ColorRect = $"../../../Player/Blackout"
 @onready var mesh: MeshInstance3D = $".."
+@onready var this: StaticBody3D = $"."
 
 func get_prompt() -> String:
 	return "Druk E om te nuttigen"
@@ -35,16 +36,17 @@ func should_interact() -> bool:
 func interact() -> void:
 	empty = true
 	mesh.visible = false
+	player.add_collision_exception_with(this)
 	player.bac = player.bac + 0.5
 	player.bac_label.text = format % player.bac
 	print(vignettemap[player.bac])
 	vignette.material.set_shader_parameter("intensity", vignettemap[player.bac])
 	glok_player.play()
+	
 	if (player.bac == 1):
 		heart_beat_player.play()
 	if (player.bac == 2):
 		breathing_player.play()
-
 	if (player.bac == 5):
 		await get_tree().create_timer(6).timeout
 		breathing_player.stop()
@@ -55,6 +57,6 @@ func interact() -> void:
 		player.should_bob = false
 		await get_tree().create_timer(3.30).timeout
 		heart_beat_player.stop()
-		head.position.y = head.position.y - 1.3
-		await get_tree().create_timer(0.05).timeout
+		head.position.y = head.position.y - 1.2
+		await get_tree().create_timer(0.07).timeout
 		blackout.visible = true

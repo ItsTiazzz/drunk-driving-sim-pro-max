@@ -28,6 +28,9 @@ var bac = 0.0
 @onready var vignette: ColorRect = $Vignette
 @onready var instructions_label: Label = $InstructionsLabel
 
+@onready var directional_light: DirectionalLight3D = $"../Environment/DirectionalLight3D"
+var night = false
+
 func _ready() -> void:
 	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -60,6 +63,9 @@ func _physics_process(delta: float) -> void:
 	_update_hover()
 	if Input.is_action_just_released("interact"):
 		_interact()
+	if Input.is_action_just_released("nightmode"):
+		directional_light.visible = night
+		night = !night
 	
 	move_and_slide()
 	

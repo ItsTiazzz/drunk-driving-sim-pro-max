@@ -593,7 +593,7 @@ points = PackedVector3Array(-0.304864, 0.093589805, -0.12629056, -0.304864, 0.09
 environment = SubResource("Environment_nnsk1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(1, 0, 0, 0, 0.004625141, 0.99998933, 0, -0.99998933, 0.004625141, 0, 64.434975, 0)
+transform = Transform3D(1, 0, 0, 0, 0.004625141, 0.99998933, 0, -0.99998933, 0.004625141, 0, 58.701027, -22.718712)
 light_color = Color(1, 0.6757672, 0.39709434, 1)
 light_energy = 0.5
 light_volumetric_fog_energy = 0.5
@@ -638,6 +638,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="room"]
 transform = Transform3D(1, 0, 2.3283064e-10, 0, 1, 0, -2.3283064e-10, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_k0juu")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(0.00237365, 0, -0.99999726, 0, 1, 0, 0.99999726, 0, 0.00237365, -3.0574148, 12.540436, -16.684471)
+omni_range = 7.4163103
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(0.00237365, 0, -0.99999726, 0, 1, 0, 0.99999726, 0, 0.00237365, -2.5030293, 11.7669, -9.302552)
+omni_range = 7.4163103
 
 [node name="Beer1" type="Node3D" parent="."]
 transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0.78092545, 10.066807, -11.842791)
