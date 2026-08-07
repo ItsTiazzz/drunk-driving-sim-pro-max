@@ -1,0 +1,9 @@
+.godot/
+/android/
+.gradle
+.kotlin
+.idea
+build
+jvm
+.export
+gradle.properties
