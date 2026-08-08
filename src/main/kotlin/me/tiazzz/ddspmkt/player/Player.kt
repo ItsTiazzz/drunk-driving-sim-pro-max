@@ -1,8 +1,8 @@
 package me.tiazzz.ddspmkt.player
 
-import godot.annotation.RegisterClass
-import godot.annotation.RegisterFunction
-import godot.annotation.RegisterProperty
+import godot.annotation.Register
+import godot.annotation.Script
+import godot.annotation.Visible
 import godot.api.Camera3D
 import godot.api.CharacterBody3D
 import godot.api.ColorRect
@@ -22,7 +22,7 @@ import me.tiazzz.ddspmkt.api.Interactable
 import me.tiazzz.ddspmkt.api.Promptable
 import me.tiazzz.ddspmkt.getNodeAs
 
-@RegisterClass
+@Script
 class Player : CharacterBody3D() {
     companion object {
         const val WALK_SPEED = 5.3
@@ -40,9 +40,9 @@ class Player : CharacterBody3D() {
     var speed = WALK_SPEED
 
     var tBob = 0.0
-    @RegisterProperty
+    @Visible
     var shouldBob = true
-    @RegisterProperty
+    @Visible
     var shouldMove = true
 
     lateinit var head: Node3D
@@ -53,9 +53,9 @@ class Player : CharacterBody3D() {
     var currentPrompt: String? = null
     lateinit var prompt: Label
 
-    @RegisterProperty
+    @Visible
     lateinit var bacLabel: Label
-    @RegisterProperty
+    @Visible
     var bac = 0.0
     lateinit var vignette: ColorRect
     lateinit var instructionsLabel: Label
@@ -63,7 +63,7 @@ class Player : CharacterBody3D() {
     lateinit var directionalLight: DirectionalLight3D
     var night = false
 
-    @RegisterProperty
+    @Visible
     var randomizeMovement = false
     var randomizationTime = 0.0
     var ran1 = "left"
@@ -71,7 +71,6 @@ class Player : CharacterBody3D() {
     var ran3 = "forward"
     var ran4 = "backward"
 
-    @RegisterFunction
     override fun _ready() {
         head = getNodeAs("Head")
         camera = getNodeAs("Head/Camera")
@@ -88,7 +87,6 @@ class Player : CharacterBody3D() {
         (vignette.material as ShaderMaterial).setShaderParameter("intensity", 0.0)
     }
 
-    @RegisterFunction
     override fun _unhandledInput(event: InputEvent) {
         if (event is InputEventMouseMotion) {
             head.rotateY((-event.relative.x * SENSITIVITY).toFloat())
@@ -99,7 +97,6 @@ class Player : CharacterBody3D() {
         }
     }
 
-    @RegisterFunction
     override fun _physicsProcess(delta: Double) {
         if (!isOnFloor()) {
             velocity += getGravity() * delta
@@ -132,7 +129,6 @@ class Player : CharacterBody3D() {
         moveAndSlide()
     }
 
-    @RegisterFunction
     override fun _process(delta: Double) {
         if (currentPrompt != null && currentInteractable != null) {
             prompt.text = currentPrompt ?: ""
@@ -141,7 +137,7 @@ class Player : CharacterBody3D() {
         }
     }
 
-    @RegisterFunction
+    @Register
     fun move(delta: Double) {
         if (Input.isActionJustPressed("jump") && isOnFloor()) {
             velocityMutate { y = JUMP_VELOCITY }
@@ -197,7 +193,7 @@ class Player : CharacterBody3D() {
         }
     }
 
-    @RegisterFunction
+    @Register
     fun headBob(time: Double): Vector3 {
         var time = time
         val pos = Vector3.ZERO
@@ -209,7 +205,7 @@ class Player : CharacterBody3D() {
         return pos
     }
 
-    @RegisterFunction
+    @Register
     fun updateHover() {
         if (!interactionRay.isColliding()) {
             resetHover()
@@ -237,13 +233,13 @@ class Player : CharacterBody3D() {
         }
     }
 
-    @RegisterFunction
+    @Register
     fun resetHover() {
         currentPrompt = null
         currentInteractable = null
     }
 
-    @RegisterFunction
+    @Register
     fun interact() {
         if (!interactionRay.isColliding()) {
             return

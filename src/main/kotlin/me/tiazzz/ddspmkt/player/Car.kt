@@ -1,8 +1,7 @@
 package me.tiazzz.ddspmkt.player
 
-import godot.annotation.RegisterClass
-import godot.annotation.RegisterFunction
-import godot.annotation.RegisterProperty
+import godot.annotation.Register
+import godot.annotation.Script
 import godot.api.AudioStreamPlayer
 import godot.api.Camera3D
 import godot.api.ColorRect
@@ -17,7 +16,7 @@ import me.tiazzz.ddspmkt.api.Interactable
 import me.tiazzz.ddspmkt.api.Promptable
 import me.tiazzz.ddspmkt.getNodeAs
 
-@RegisterClass
+@Script
 class Car : VehicleBody3D(), Interactable, Promptable {
     companion object {
         const val MAX_STEER = 0.5
@@ -44,7 +43,6 @@ class Car : VehicleBody3D(), Interactable, Promptable {
     var driving = false
     var last = 0
 
-    @RegisterFunction
     override fun _ready() {
         cameraPivot = getNodeAs("CameraPivot")
         camera3D = getNodeAs("CameraPivot/Camera3D")
@@ -63,10 +61,10 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         lookDirection = globalPosition
     }
 
-    @RegisterFunction
+    @Register
     override fun shouldInteract() = !driving
 
-    @RegisterFunction
+    @Register
     override fun interact() {
         if (player.bac == 5.0) {
             return
@@ -76,7 +74,7 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         }
     }
 
-    @RegisterFunction
+    @Register
     fun enter() {
         player.addCollisionExceptionWith(this)
         driving = true
@@ -87,7 +85,7 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         speedLabel.visible = true
     }
 
-    @RegisterFunction
+    @Register
     fun leave() {
         driving = false
         player.globalPosition = globalPosition
@@ -102,7 +100,7 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         speedLabel.visible = false
     }
 
-    @RegisterFunction
+    @Register
     override fun getPrompt(): String {
         if (player.bac == 5.0) {
             return "War isd e dkeur kolink?//!"
@@ -110,7 +108,6 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         return "Druk E om in te stappen"
     }
 
-    @RegisterFunction
     override fun _physicsProcess(delta: Double) {
         if (!driving) {
             return
@@ -148,7 +145,7 @@ class Car : VehicleBody3D(), Interactable, Promptable {
         speedLabel.text = formatSpeed(snapped(linearVelocity.length() * 3.6, 1.0))
     }
 
-    @RegisterFunction
+    @Register
     fun checkCameraSwitch() {
         if (linearVelocity.dot(transform.basis.z) > -0.05) {
             camera3D.current = true

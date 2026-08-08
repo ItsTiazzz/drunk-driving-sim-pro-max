@@ -1,19 +1,24 @@
-import godot.entrygenerator.settings.RegisteredNameMode
-import godot.entrygenerator.settings.RegistrationFileLayoutMode
-import godot.entrygenerator.settings.RegistrationFileIndentation
+import godot.annotation.processor.classgraph.AnnotationProcessingMode
 import godot.gradle.GodotLanguage
+import godot.registrar.generator.RegisteredNameMode
+import godot.registrar.generator.RegistrationFileIndentation
+import godot.registrar.generator.RegistrationFileLayoutMode
 
 plugins {
-    id("com.utopia-rise.godot-kotlin-jvm") version "0.16.3-4.6.3"
+    id("com.utopia-rise.godot-kotlin-jvm") version "0.17.0-4.7.2"
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
+    google()
 }
 
 godot {
     languages = setOf(GodotLanguage.KOTLIN)
     godotProjectDirectory = file("./srcGodot")
+
+    annotationProcessingMode = AnnotationProcessingMode.Inferred
 
     registrationFilesLayoutMode = RegistrationFileLayoutMode.HIERARCHICAL
     registrationNameMode = RegisteredNameMode.SIMPLE_NAME

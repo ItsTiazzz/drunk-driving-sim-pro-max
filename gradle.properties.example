@@ -1,2 +1,9 @@
-windows_java_home=~/.jdks/temurin-windows-17.0.20+8
+org.gradle.jvmargs=-Xmx3G
+org.gradle.configuration-cache=true
+org.gradle.parallel=true
+
+# Ensure that these are FULL paths (including godot_exec).
+# For JDKs: you can use "java.home" to let the script just fetch the current java.home.
+linux_java_home=java.home
+windows_java_home=/home/example/.jdks/temurin-windows-17.0.20+8
 godot_exec=/home/example/dev/godot

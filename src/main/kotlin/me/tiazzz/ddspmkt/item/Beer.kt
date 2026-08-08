@@ -1,7 +1,7 @@
 package me.tiazzz.ddspmkt.item
 
-import godot.annotation.RegisterClass
-import godot.annotation.RegisterFunction
+import godot.annotation.Register
+import godot.annotation.Script
 import godot.api.AudioStreamPlayer
 import godot.api.ColorRect
 import godot.api.MeshInstance3D
@@ -17,7 +17,7 @@ import me.tiazzz.ddspmkt.api.Promptable
 import me.tiazzz.ddspmkt.getNodeAs
 import me.tiazzz.ddspmkt.player.Player
 
-@RegisterClass
+@Script
 class Beer : Node3D(), Interactable, Promptable {
     var empty = false
 
@@ -46,7 +46,6 @@ class Beer : Node3D(), Interactable, Promptable {
     lateinit var blackout: ColorRect
     lateinit var mesh: MeshInstance3D
 
-    @RegisterFunction
     override fun _ready() {
         player = getNodeAs("../../../Player")
         vignette = getNodeAs("../../../Player/Vignette")
@@ -59,17 +58,17 @@ class Beer : Node3D(), Interactable, Promptable {
         mesh = getNodeAs("..")
     }
 
-    @RegisterFunction
+    @Register
     override fun getPrompt(): String {
         return "Druk E om te nuttigen"
     }
 
-    @RegisterFunction
+    @Register
     override fun shouldInteract(): Boolean {
         return !empty
     }
 
-    @RegisterFunction
+    @Register
     override fun interact() {
         empty = true
         mesh.visible = false
