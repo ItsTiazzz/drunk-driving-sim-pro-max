@@ -16,7 +16,6 @@ repositories {
 
 godot {
     languages = setOf(GodotLanguage.KOTLIN)
-    godotProjectDirectory = file("./srcGodot")
 
     annotationProcessingMode = AnnotationProcessingMode.Inferred
 
