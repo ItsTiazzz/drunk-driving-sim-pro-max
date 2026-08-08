@@ -1,5 +1,4 @@
 org.gradle.jvmargs=-Xmx3G
-org.gradle.configuration-cache=true
 org.gradle.parallel=true
 
 # Ensure that these are FULL paths (including godot_exec).

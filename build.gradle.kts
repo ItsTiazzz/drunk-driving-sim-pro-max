@@ -36,9 +36,17 @@ tasks.register("generateAllEmbeddedJres") {
     group = "godot-kotlin-jvm"
     description = "Generate JRE's for all specified platforms."
 
+    val getJHProp = { propertyName: String ->
+        if (project.property(propertyName) == "java.home") {
+            System.getProperty("java.home")
+        } else {
+            project.property(propertyName) as String
+        }
+    }
+
     val platforms = listOf(
-        Triple("amd64", "linux", "${System.getProperty("java.home")}/jmods"),
-        Triple("amd64", "windows", "${project.property("windows_java_home")}/jmods"),
+        Triple("amd64", "linux", "${getJHProp("linux_java_home")}/jmods"),
+        Triple("amd64", "windows", "${getJHProp("windows_java_home")}/jmods"),
     )
 
     var modules: Array<String> = arrayOf(
@@ -52,7 +60,7 @@ tasks.register("generateAllEmbeddedJres") {
         "--no-man-pages"
     )
 
-    val outDir = { arch: String, os: String -> "srcGodot/jvm/jre-$arch-$os" }
+    val outDir = { arch: String, os: String -> "jvm/jre-$arch-$os" }
 
     val injected = objects.newInstance<InjectedExecOps>()
 
@@ -85,11 +93,11 @@ tasks.register("exportAll") {
     group = "godot-kotlin-jvm"
     description = "Exports the Godot projects"
 
-    val exportDir = "srcGodot/.export"
+    val exportDir = "build/export"
 
     val platforms = listOf(
-        "Linux" to ".export/linux.zip",
-        "Windows Desktop" to ".export/windows.zip"
+        "Linux" to "build/export/linux.zip",
+        "Windows Desktop" to "build/export/windows.zip"
     )
 
     val injected = objects.newInstance<InjectedExecOps>()
@@ -105,7 +113,7 @@ tasks.register("exportAll") {
                 commandLine(
                     project.property("godot_exec"),
                     "--headless",
-                    "--path", "srcGodot",
+                    "--path", ".",
                     "--export-release", platform, exportPath,
                 )
             }
@@ -125,7 +133,7 @@ tasks.register("runGame") {
         injected.execOps.exec {
             commandLine(
                 project.property("godot_exec"),
-                "--path", "srcGodot"
+                "--path", "."
             )
         }
     }
